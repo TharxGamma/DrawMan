@@ -3,22 +3,12 @@
 
 #include <iostream>
 #include <stdio.h>
-#include "Header.h"
+#include "ManHeader.h"
 
 
 int main() // Main duh
 {
-
-	Man men[10];
-
-	for (int i = 0; i < 10; i++)
-	{
-		men[0].Refresh();
-		men[0].SetLocation(5, 5);
-		men[0].DrawMan();
-		men[0].PrintMyMan();
-	}
-
+	
 	return 0;
 }
 

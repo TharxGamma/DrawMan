@@ -1,5 +1,8 @@
 #pragma once
 
+#include <iostream>
+#include <stdio.h>
+
 #define SIZEX 100 //SIZEX and SIZEY is set and defined to be used later
 #define SIZEY 30
 
@@ -65,4 +68,5 @@ public:
 			std::cout << std::endl;
 		}
 	}
+
 };

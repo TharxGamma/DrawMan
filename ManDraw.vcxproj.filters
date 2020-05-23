@@ -18,9 +18,12 @@
     <ClCompile Include="ManDraw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Man.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="ManHeader.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
