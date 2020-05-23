@@ -10,10 +10,15 @@ int main() // Main duh
 {
 
 	Man men[10];
-	men[0].Refresh();
-	men[0].SetLocation(5, 5);
-	men[0].DrawMan();
-	men[0].PrintMyMan(); 
+
+	for (int i = 0; i < 10; i++)
+	{
+		men[0].Refresh();
+		men[0].SetLocation(5, 5);
+		men[0].DrawMan();
+		men[0].PrintMyMan();
+	}
+
 	return 0;
 }
 
