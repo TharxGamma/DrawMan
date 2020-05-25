@@ -8,7 +8,13 @@
 
 int main() // Main duh
 {
-	
+	Man men;
+
+	men.CreateObject();
+	men.SetLocation(5, 5);
+	men.Refresh();
+	men.DrawMan();
+	men.PrintMyMan();
 	return 0;
 }
 
