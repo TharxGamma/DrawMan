@@ -28,7 +28,7 @@ void Man::SetLocation(int ValX, int ValY)
 	ValueY = ValX;
 }
 
-void Man::Refresh()
+void Canvas::Refresh()
 {
 	//Code to refresh 
 	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++) // Loop through the amount of times defined by SIZEY
@@ -75,4 +75,3 @@ void Man::PrintMyMan()
 	}
 }
 
- 

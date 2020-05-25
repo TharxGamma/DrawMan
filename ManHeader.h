@@ -13,8 +13,13 @@ public:
 	int ValueY;
 
 	void SetLocation(int ValX, int ValY);
-	void Refresh();
 	void DrawMan();
 	void PrintMyMan();
 	void CreateObject();
+};
+
+class Canvas
+{
+	char Canvas[100][30];
+	void Refresh();
 };
