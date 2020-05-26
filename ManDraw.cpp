@@ -3,11 +3,15 @@
 
 #include <iostream>
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctime>
 #include "ManHeader.h"
 
 
 int main() // Main duh
 {
+
+	srand((unsigned)time(0));
 
 	Man men[10];
 
@@ -15,7 +19,7 @@ int main() // Main duh
 	for (int i = 0; i < 10; i++)
 	{
 		men[i].Refresh();
-		men[i].SetLocation(5,5);
+		men[i].SetLocation(rand() % 100 , rand() % 30);
 		men[i].DrawMan();
 		men[i].PrintMyMan();
 
