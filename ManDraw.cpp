@@ -8,13 +8,22 @@
 
 int main() // Main duh
 {
-	Man men;
 
-	men.CreateObject();
-	men.SetLocation(5, 5);
-	men.Refresh();
-	men.DrawMan();
-	men.PrintMyMan();
+	Man men[10];
+
+
+	for (int i = 0; i < 10; i++)
+	{
+		men[i].Refresh();
+		men[i].SetLocation(5,5);
+		men[i].DrawMan();
+		men[i].PrintMyMan();
+
+		// Need to increase the array element by one
+			// Then SetLocation +5
+
+	}
+
 	return 0;
 }
 

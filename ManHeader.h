@@ -15,11 +15,10 @@ public:
 	void SetLocation(int ValX, int ValY);
 	void DrawMan();
 	void PrintMyMan();
-	void CreateObject();
+	void Refresh();
 };
 
 class Canvas
 {
-	char Canvas[100][30];
-	void Refresh();
+	
 };

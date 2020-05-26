@@ -5,44 +5,12 @@
 
 char Canvas[SIZEX][SIZEY]; // Declare a char 2d array and set SIZEX and SIZEY
 
-void Man::CreateObject()
-{
-	Man men[10];
-
-	for (int i = 0; i < 10; i++)
-	{
-		men[0].Refresh();
-		men[0].SetLocation(5, 5);
-		men[0].DrawMan();
-		men[0].PrintMyMan();
-
-		// Need to increase the array element by one
-			// Then SetLocation +5
-
-	}
-}
-
 void Man::SetLocation(int ValX, int ValY)
 {
 	ValueX = ValX;
 	ValueY = ValX;
 }
 
-void Canvas::Refresh()
-{
-	//Code to refresh 
-	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++) // Loop through the amount of times defined by SIZEY
-	{
-
-		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++) // Nested loop part, will loop max amount of times which is defined by SIZEX
-		{
-
-			Canvas[NIndexX][NIndexY] = '-'; // Set '-' to each postion in the 2D array 
-
-		}
-
-	}
-}
 
 void Man::DrawMan()
 {
@@ -75,3 +43,18 @@ void Man::PrintMyMan()
 	}
 }
 
+void Man::Refresh()
+{
+	//Code to refresh 
+	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++) // Loop through the amount of times defined by SIZEY
+	{
+
+		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++) // Nested loop part, will loop max amount of times which is defined by SIZEX
+		{
+
+			Canvas[NIndexX][NIndexY] = '-'; // Set '-' to each postion in the 2D array 
+
+		}
+
+	}
+}
