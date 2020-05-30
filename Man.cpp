@@ -1,14 +1,30 @@
 #include "ManHeader.h"
 
-#define SIZEX 100 //SIZEX and SIZEY is set and defined to be used later
-#define SIZEY 30
+Man::Man()
+{
 
-char Canvas[SIZEX][SIZEY]; // Declare a char 2d array and set SIZEX and SIZEY
+}
+
+void Man::SetCanvasSize(int CanvasSizeX, int CanvasSizeY)
+{
+	CanvasX = CanvasSizeX;
+	CanvasY = CanvasSizeY;
+}
+
+void Man::SetCanvas(char* Canvas)
+{
+	cpCanvas = Canvas;
+}
 
 void Man::SetLocation(int ValX, int ValY)
 {
 	ValueX = ValX;
-	ValueY = ValX;
+	ValueY = ValY;
+}
+
+void Man::AddSpeed(int Velocity)
+{
+	this->Velocity = Velocity;
 }
 
 
@@ -17,44 +33,61 @@ void Man::DrawMan()
 	//Code to draw man
 	//Properties of the man
 	char chBodyStyle = '#';
-	Canvas[ValueX][ValueY] = chBodyStyle; // Set the postion of the canvas at location 5 (Which is what we declared) and change it to a hashtag
-	Canvas[ValueX - 1][ValueY + 1] = chBodyStyle; // Same again but this time increment and decrement the locations 
-	Canvas[ValueX][ValueY + 1] = chBodyStyle;
-	Canvas[ValueX + 1][ValueY + 1] = chBodyStyle;
-	Canvas[ValueX][ValueY + 2] = chBodyStyle;
-	Canvas[ValueX - 1][ValueY + 3] = chBodyStyle;
-	Canvas[ValueX + 1][ValueY + 3] = chBodyStyle;
+	//Canvas[ValueX][ValueY] = chBodyStyle; // Set the postion of the canvas at location 5 (Which is what we declared) and change it to a hashtag
+	//Canvas[ValueX - 1][ValueY + 1] = chBodyStyle; // Same again but this time increment and decrement the locations 
+	//Canvas[ValueX][ValueY + 1] = chBodyStyle;
+	//Canvas[ValueX + 1][ValueY + 1] = chBodyStyle;
+	//Canvas[ValueX][ValueY + 2] = chBodyStyle;
+	//Canvas[ValueX - 1][ValueY + 3] = chBodyStyle;
+	//Canvas[ValueX + 1][ValueY + 3] = chBodyStyle;
+
+	SetPixel(cpCanvas, ValueX, ValueY, chBodyStyle);
+	SetPixel(cpCanvas, ValueX - 1, ValueY + 1, chBodyStyle);
+	SetPixel(cpCanvas, ValueX, ValueY + 1, chBodyStyle);
+	SetPixel(cpCanvas, ValueX + 1, ValueY + 1, chBodyStyle);
+	SetPixel(cpCanvas, ValueX, ValueY + 2, chBodyStyle);
+	SetPixel(cpCanvas, ValueX - 1, ValueY + 3, chBodyStyle);
+	SetPixel(cpCanvas, ValueX + 1, ValueY + 3, chBodyStyle);
+
+	//SetPixel(cpCanvas, ValueX, ValueY, chBodyStyle);
+	//SetPixel(cpCanvas, ValueX, ValueY+1, chBodyStyle);
+	//SetPixel(cpCanvas, ValueX, ValueY+2, chBodyStyle);
 }
 
-void Man::PrintMyMan()
+void Man::Update()
 {
-	//Code to print
-	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++)
+	//Code to draw man
+	//Properties of the man
+	char chBodyStyle = '#';
+
+	ValueX = ValueX + Velocity;
+
+	if (ValueX > CanvasX - 5)
 	{
-
-		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++)
-		{
-
-			std::cout << Canvas[NIndexX][NIndexY];
-
-		}
-
-		std::cout << std::endl;
+		Velocity = -Velocity;
 	}
+	if (ValueX < 5)
+	{
+		Velocity = -Velocity;
+	}
+
+	SetPixel(cpCanvas, ValueX, ValueY, chBodyStyle);
+	SetPixel(cpCanvas, ValueX - 1, ValueY + 1, chBodyStyle);
+	SetPixel(cpCanvas, ValueX, ValueY + 1, chBodyStyle);
+	SetPixel(cpCanvas, ValueX + 1, ValueY + 1, chBodyStyle);
+	SetPixel(cpCanvas, ValueX, ValueY + 2, chBodyStyle);
+	SetPixel(cpCanvas, ValueX - 1, ValueY + 3, chBodyStyle);
+	SetPixel(cpCanvas, ValueX + 1, ValueY + 3, chBodyStyle);
+
 }
 
-void Man::Refresh()
+void Man::SetPixel(char* pCanvasIn, int NX, int NY, char cBody)
 {
-	//Code to refresh 
-	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++) // Loop through the amount of times defined by SIZEY
-	{
-
-		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++) // Nested loop part, will loop max amount of times which is defined by SIZEX
-		{
-
-			Canvas[NIndexX][NIndexY] = '-'; // Set '-' to each postion in the 2D array 
-
-		}
-
-	}
+	//int X = 1;
+	//int Y = 2;
+	int temp = (((NY - 1) * CanvasX) + (NX - 1));
+	//*(pCanvasIn + ((((NY * CanvasX)) + NX) * sizeof(char))) = cBody;
+	pCanvasIn[temp] = cBody;
 }
+
+
