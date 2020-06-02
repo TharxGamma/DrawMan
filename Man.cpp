@@ -90,27 +90,5 @@ void Man::SetPixel(char* pCanvasIn, int NX, int NY, char cBody)
 	pCanvasIn[temp] = cBody;
 }
 
-void Man::SetPixel(int NX, int NY, char cBody)
-{
-
-	//Test 3x3 array
-	char TestCanvas[3][3] = { { 1,2,3 }, { 4,5,6 }, { 7,8,9 } };
-
-	NX = 1; //Top row first element
-	NY = 1;
-	//Index in a flat array = 0  (remember 0 indexed)
-
-	NX = 2; //Top row Second element
-	NY = 1;
-	//Index in a flat array = 1
-
-	NX = 1;	//Second row first element
-	NY = 2;
-	//Index in a flat array = 4
-
-	//This function needs to calculate the flat array index, based on the X and Y coordinates passed as arguments.
-
-	//Then it needs to set the value of the array at that index to the cBody character.
-}
 
 
