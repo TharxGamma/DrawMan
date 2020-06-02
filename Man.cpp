@@ -6,27 +6,10 @@ void Man::SetLocation(int ValX, int ValY)
 	ValueY = ValX;
 }
 
-void Man::GetCanvas(char* Canvas)
+void Man::SetCanvas(char* Canvas)
 {
 	pCanvas = Canvas;
 }
-//
-//void Man::PrintMyMan()
-//{
-//	//Code to print
-//	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++)
-//	{
-//		
-//		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++)
-//		{
-//
-//			std::cout << [NIndexX][NIndexY];
-//
-//		}
-//
-//		std::cout << std::endl;
-//	}
-//}
 
 
 void Man::DrawMan()

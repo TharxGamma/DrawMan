@@ -12,28 +12,45 @@
 char Canvas[SIZEX][SIZEY]; // Declare a char 2d array and set SIZEX and SIZEY
 
 void Refresh();
+void PrintFrame();
 
 int main() // Main duh
 {
-	Refresh();
 	srand((unsigned)time(0));
 
 	Man men[10];
 
-	men->GetCanvas(*Canvas);
 
 	for (int i = 0; i < 10; i++)
 	{
-		Refresh();
+		PrintFrame();
+		men[i].SetCanvas(&Canvas[0][0]);
 		men[i].SetLocation((rand() % 100) - 5 , (rand() % 30) - 5);
 		men[i].DrawMan();
-		//men[i].PrintMyMan();
+		Refresh();
 
 	}
 
 	return 0;
 }
 
+
+void PrintFrame()
+{
+	//Code to print
+	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++)
+	{
+		
+		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++)
+		{
+
+			std::cout << Canvas[NIndexX][NIndexY];
+
+		}
+
+		std::cout << std::endl;
+	}
+}
 
 void Refresh()
 {
