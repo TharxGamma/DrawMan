@@ -9,13 +9,14 @@ class Man
 {
 
 public:
-	void GetCanvas(char* pCanvas);
 	void SetLocation(int ValX, int ValY);
-	void DrawMan(char* pCanvas);
-	void PrintMyMan();
-	void Refresh();
-	
+	void DrawMan();
+	//void PrintMyMan();
+	void GetCanvas(char* Canvas);
+		
 private:
 	int ValueX;
 	int ValueY;	
+
+	char* pCanvas;
 };
