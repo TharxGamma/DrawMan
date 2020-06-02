@@ -9,16 +9,13 @@ class Man
 {
 
 public:
-	int ValueX;
-	int ValueY;
-
+	void GetCanvas(char* pCanvas);
 	void SetLocation(int ValX, int ValY);
-	void DrawMan();
+	void DrawMan(char* pCanvas);
 	void PrintMyMan();
 	void Refresh();
-};
-
-class Canvas
-{
 	
+private:
+	int ValueX;
+	int ValueY;	
 };
