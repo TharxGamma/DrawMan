@@ -26,4 +26,12 @@ void Man::DrawMan()
 	pCanvas[ValueX + 1][&ValueY + 3] = chBodyStyle;
 }
 
+void Man::SetPixel(char* pCanvasIn, int NX, int NY, char cBody)
+{
 
+}
+
+void Man::Update()
+{
+
+}

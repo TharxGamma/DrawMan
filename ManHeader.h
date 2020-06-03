@@ -11,6 +11,8 @@ public:
 	void SetLocation(int ValX, int ValY);
 	void DrawMan();
 	void SetCanvas(char* Canvas);
+	void SetPixel(char* pCanvasIn, int NX, int NY, char cBody);
+	void Update();
 		
 private:
 	int ValueX;
