@@ -9,7 +9,9 @@
 #define SIZEX 100 //SIZEX and SIZEY is set and defined to be used later
 #define SIZEY 30
 
-char Canvas[SIZEX][SIZEY]; // Declare a char 2d array and set SIZEX and SIZEY
+char Canvas[SIZEX][SIZEY]{ '-' }; // Declare a char 2d array and set SIZEX and SIZEY
+
+int NumberOfMen = 5; // Removed magic number
 
 void Refresh();
 void PrintFrame();
@@ -20,32 +22,27 @@ int main() // Main duh
 
 	Man men[10];
 
-
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < NumberOfMen; i++)
 	{
-		PrintFrame();
 		men[i].SetCanvas(&Canvas[0][0]);
 		men[i].SetLocation((rand() % 100) - 5 , (rand() % 30) - 5);
 		men[i].DrawMan();
-		Refresh();
-
 	}
 
-	return 0;
+	PrintFrame();
+	return 0; 
 }
 
 
 void PrintFrame()
 {
+	std::cout << "===============New Frame===============" << std::endl;
 	//Code to print
 	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++)
 	{
-		
 		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++)
 		{
-
 			std::cout << Canvas[NIndexX][NIndexY];
-
 		}
 
 		std::cout << std::endl;
