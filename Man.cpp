@@ -3,7 +3,13 @@
 void Man::SetLocation(int ValX, int ValY)
 {
 	ValueX = ValX;
-	ValueY = ValX;
+	ValueY = ValY;
+}
+
+void Man::SetCanvasSize(int CanvasSizeX, int CanvasSizeY)
+{
+	CanvasX = CanvasSizeX;
+	CanvasY = CanvasSizeY;
 }
 
 void Man::SetCanvas(char* Canvas)
@@ -36,7 +42,8 @@ void Man::DrawMan()
 
 void Man::SetPixel(char* pCanvasIn, int NX, int NY, char cBody)
 {
-	int Pixel = ((NY - 1) * ValueX) + (NX - 1);
+	char chBodyStyle = '#';
+	int Pixel = (((NY - 1) * CanvasX) + (NX - 1));
 
 	pCanvasIn[Pixel] = cBody;
 }
