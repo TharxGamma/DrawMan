@@ -24,15 +24,16 @@ int main() // Main duh
 
 	srand((unsigned)time(0));
 
-	Man men[10];
+	Man men[NUMBEROFMEN];
 
 	for (int i = 0; i < NUMBEROFMEN; i++)
 	{
 		men[i].SetCanvasSize(SIZEX, SIZEY);
 		men[i].SetCanvas(&Canvas[0][0]);
-		men[i].SetLocation((rand() % (SIZEX - BORDER)), (rand() % (SIZEY - BORDER)));
+		men[i].SetLocation(	(	(	rand() %	(SIZEX - BORDER - 5)	) + BORDER)	, (	(rand() %	(SIZEY - BORDER - 5)	) + BORDER)	);
 		men[i].DrawMan();
 		PrintFrame();
+		//men[i].SetLocation((rand() % (SIZEX - BORDER)), (rand() % (SIZEY - BORDER)));
 	}
 
 	return 0; 
@@ -43,9 +44,9 @@ void PrintFrame()
 {
 	std::cout << "===============New Frame===============" << std::endl;
 	//Code to print
-	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++)
+	for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++)
 	{
-		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++)
+		for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++)
 		{
 			//Canvas[NIndexX][NIndexY] = '-';
 			std::cout << Canvas[NIndexX][NIndexY];
@@ -58,10 +59,10 @@ void PrintFrame()
 void Refresh()
 {
 	//Code to refresh 
-	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++) // Loop through the amount of times defined by SIZEY
+	for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++) // Loop through the amount of times defined by SIZEY
 	{
 
-		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++) // Nested loop part, will loop max amount of times which is defined by SIZEX
+		for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++) // Nested loop part, will loop max amount of times which is defined by SIZEX
 		{
 
 			Canvas[NIndexX][NIndexY] = '-'; // Set '-' to each postion in the 2D array 
