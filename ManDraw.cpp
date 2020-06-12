@@ -23,6 +23,8 @@ int main() // Main duh
 	Refresh();
 
 	srand((unsigned)time(0));
+	
+	int RandomLocation = ((rand() % (SIZEX - BORDER - 5)) + BORDER);
 
 	Man men[NUMBEROFMEN];
 
@@ -32,9 +34,10 @@ int main() // Main duh
 		men[i].SetCanvas(&Canvas[0][0]);
 		men[i].SetLocation(	(	(	rand() %	(SIZEX - BORDER - 5)	) + BORDER)	, (	(rand() %	(SIZEY - BORDER - 5)	) + BORDER)	);
 		men[i].DrawMan();
-		PrintFrame();
-		//men[i].SetLocation((rand() % (SIZEX - BORDER)), (rand() % (SIZEY - BORDER)));
+		//men[i].SetLocation(	(	(	rand() %	(SIZEX - BORDER - 5)	) + BORDER)	, (	(rand() %	(SIZEY - BORDER - 5)	) + BORDER)	);
 	}
+	PrintFrame();
+
 
 	return 0; 
 }
@@ -42,14 +45,13 @@ int main() // Main duh
 
 void PrintFrame()
 {
-	std::cout << "===============New Frame===============" << std::endl;
+	std::cout << "---------------------------------------This is a new frame----------------------------------------" << std::endl;
 	//Code to print
-	for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++)
+	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++)
 	{
-		for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++)
+		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++)
 		{
-			//Canvas[NIndexX][NIndexY] = '-';
-			std::cout << Canvas[NIndexX][NIndexY];
+			std::cout << Canvas[NIndexY][NIndexX];
 		}
 
 		std::cout << std::endl;
@@ -59,13 +61,13 @@ void PrintFrame()
 void Refresh()
 {
 	//Code to refresh 
-	for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++) // Loop through the amount of times defined by SIZEY
+	for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++) // Loop through the amount of times defined by SIZEY
 	{
 
-		for (int NIndexY = 0; NIndexY < SIZEY; NIndexY++) // Nested loop part, will loop max amount of times which is defined by SIZEX
+		for (int NIndexX = 0; NIndexX < SIZEX; NIndexX++) // Nested loop part, will loop max amount of times which is defined by SIZEX
 		{
 
-			Canvas[NIndexX][NIndexY] = '-'; // Set '-' to each postion in the 2D array 
+			Canvas[NIndexY][NIndexX] = '-'; // Set '-' to each postion in the 2D array 
 
 		}
 
