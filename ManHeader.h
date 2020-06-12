@@ -13,6 +13,7 @@ public:
 	void SetCanvas(char* Canvas);
 	void SetPixel(char* pCanvasIn, int NX, int NY, char cBody);
 	void SetCanvasSize(int CanvasSizeX, int CanvasSizeY);
+	void SetVelocity(int ManVelocity);
 		
 private:
 	int ValueX;
@@ -20,6 +21,8 @@ private:
 
 	int CanvasX;
 	int CanvasY;
+
+	int Velocity;
 
 	char* pCanvas;
 };
