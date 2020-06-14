@@ -51,6 +51,16 @@ void Man::Update()
 
 	ValueX += Velocity;
 
+
+	if (ValueX > CanvasX - 5)
+	{
+		Velocity = -Velocity;
+	}
+	if (ValueX < 5)
+	{
+		Velocity = -Velocity;
+	}
+
 	SetPixel(pCanvas, ValueX, ValueY, chBodyStyle);
 	SetPixel(pCanvas, ValueX - 1, ValueY + 1, chBodyStyle);
 	SetPixel(pCanvas, ValueX, ValueY + 1, chBodyStyle);
