@@ -14,6 +14,7 @@ public:
 	void SetPixel(char* pCanvasIn, int NX, int NY, char cBody);
 	void SetCanvasSize(int CanvasSizeX, int CanvasSizeY);
 	void SetVelocity(int ManVelocity);
+	void Update();
 		
 private:
 	int ValueX;
@@ -24,5 +25,5 @@ private:
 
 	int Velocity;
 
-	char* pCanvas;
+	char* pCanvas = NULL;
 };

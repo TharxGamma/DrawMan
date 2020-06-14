@@ -14,19 +14,19 @@ void Man::SetCanvasSize(int CanvasSizeX, int CanvasSizeY)
 
 void Man::SetCanvas(char* Canvas)
 {
-	pCanvas = Canvas;
+	this->pCanvas = Canvas;
 }
 
 void Man::SetVelocity(int ManVelocity)
 {
-	Velocity = ManVelocity;
+	this->Velocity = ManVelocity;
 }
 
 
 void Man::DrawMan()
 {
 	char chBodyStyle = '#';
-
+	
 	SetPixel(pCanvas, ValueX, ValueY, chBodyStyle);
 	SetPixel(pCanvas, ValueX - 1, ValueY + 1, chBodyStyle);
 	SetPixel(pCanvas, ValueX, ValueY + 1, chBodyStyle);
@@ -34,6 +34,7 @@ void Man::DrawMan()
 	SetPixel(pCanvas, ValueX, ValueY + 2, chBodyStyle);
 	SetPixel(pCanvas, ValueX - 1, ValueY + 3, chBodyStyle);
 	SetPixel(pCanvas, ValueX + 1, ValueY + 3, chBodyStyle);
+
 }
 
 void Man::SetPixel(char* pCanvasIn, int NX, int NY, char cBody)
@@ -42,4 +43,19 @@ void Man::SetPixel(char* pCanvasIn, int NX, int NY, char cBody)
 	int Pixel = (((NY - 1) * CanvasX) + (NX - 1));
 
 	pCanvasIn[Pixel] = cBody; 
+}
+
+void Man::Update()
+{
+	char chBodyStyle = '#';
+
+	ValueX += Velocity;
+
+	SetPixel(pCanvas, ValueX, ValueY, chBodyStyle);
+	SetPixel(pCanvas, ValueX - 1, ValueY + 1, chBodyStyle);
+	SetPixel(pCanvas, ValueX, ValueY + 1, chBodyStyle);
+	SetPixel(pCanvas, ValueX + 1, ValueY + 1, chBodyStyle);
+	SetPixel(pCanvas, ValueX, ValueY + 2, chBodyStyle);
+	SetPixel(pCanvas, ValueX - 1, ValueY + 3, chBodyStyle);
+	SetPixel(pCanvas, ValueX + 1, ValueY + 3, chBodyStyle);
 }

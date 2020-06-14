@@ -12,6 +12,8 @@
 #define BORDER 5
 #define NUMBEROFMEN 1
 
+#define VELOCITY 5
+
 char Canvas[SIZEY][SIZEX]{'-'};
 
 
@@ -31,7 +33,18 @@ int main() // Main duh
 		men[i].SetCanvasSize(SIZEX, SIZEY);
 		men[i].SetCanvas(&Canvas[0][0]);
 		men[i].SetLocation(	(	(	rand() %	(SIZEX - BORDER - 5)	) + BORDER)	, (	(rand() %	(SIZEY - BORDER - 5)	) + BORDER)	);
+		men[i].SetVelocity(VELOCITY);
 		men[i].DrawMan();
+		PrintFrame();
+	}
+
+	while (true)
+	{
+		Refresh();
+		for (int NIndexX = 0; NIndexX < NUMBEROFMEN; NIndexX++)
+		{
+			men[NIndexX].Update();
+		}
 		PrintFrame();
 	}
 
