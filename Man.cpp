@@ -1,4 +1,6 @@
+#include <iostream>
 #include "ManHeader.h"
+#include "Character.h"
 
 void Man::SetLocation(int ValX, int ValY)
 {
@@ -17,11 +19,10 @@ void Man::SetCanvas(char* Canvas)
 	this->pCanvas = Canvas;
 }
 
-void Man::SetVelocity(int ManVelocity)
+void Man::VelocityOfTheMan(int ManVelocity)
 {
 	this->Velocity = ManVelocity;
 }
-
 
 void Man::DrawMan()
 {
@@ -34,14 +35,23 @@ void Man::DrawMan()
 	SetPixel(pCanvas, ValueX, ValueY + 2, chBodyStyle);
 	SetPixel(pCanvas, ValueX - 1, ValueY + 3, chBodyStyle);
 	SetPixel(pCanvas, ValueX + 1, ValueY + 3, chBodyStyle);
-
+	
+	for (int x = 0; x < GhostX; x++)
+	{
+		for (int y = 0; y < GhostY; y++)
+		{
+			std::cout << ghost[x+y*GhostX];
+		}
+		std::cout << std::endl;
+	}
+	
 }
 
 void Man::SetPixel(char* pCanvasIn, int NX, int NY, char cBody)
 {
 
 	int Pixel = (((NY - 1) * CanvasX) + (NX - 1));
-
+	
 	pCanvasIn[Pixel] = cBody; 
 }
 
@@ -68,4 +78,9 @@ void Man::Update()
 	SetPixel(pCanvas, ValueX, ValueY + 2, chBodyStyle);
 	SetPixel(pCanvas, ValueX - 1, ValueY + 3, chBodyStyle);
 	SetPixel(pCanvas, ValueX + 1, ValueY + 3, chBodyStyle);
+}
+
+void Man::SetVelocity(int Speed, int angle)
+{
+	//Then from the speed and angle work out the X abd Y velocity
 }

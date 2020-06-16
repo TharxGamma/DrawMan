@@ -33,7 +33,7 @@ int main() // Main duh
 		men[i].SetCanvasSize(SIZEX, SIZEY);
 		men[i].SetCanvas(&Canvas[0][0]);
 		men[i].SetLocation(	(	(	rand() %	(SIZEX - BORDER - 5)	) + BORDER)	, (	(rand() %	(SIZEY - BORDER - 5)	) + BORDER)	);
-		men[i].SetVelocity(VELOCITY);
+		men[i].VelocityOfTheMan(VELOCITY);
 		men[i].DrawMan();
 		
 	}

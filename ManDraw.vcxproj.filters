@@ -26,5 +26,8 @@
     <ClInclude Include="ManHeader.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
